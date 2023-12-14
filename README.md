@@ -59,6 +59,4 @@ Data sources include county-level cancer data and demographic statistics obtaine
 | Bagging (depth 17) | 3,038.686 | 0.353 |
 | Boosting | 2,968.460 | 0.368 |
 
----
 
-Feel free to modify and expand upon this README to add details like installation instructions, usage guidance, or any additional insights from your project!
