@@ -6,10 +6,10 @@ This project aims to predict county-level cancer incidence and mortality rates (
 ## Data and Methodology:
 
 ### Data:
-*County-level cancer data from the Centers for Disease Control and Prevention (CDC)
-*Demographic summary statistics from the CDC
-*54 observations dropped due to missing predictors
-*70 observations with missing target variables imputed using a discrete uniform distribution
+* County-level cancer data from the Centers for Disease Control and Prevention (CDC)
+* Demographic summary statistics from the CDC
+* 54 observations dropped due to missing predictors
+* 70 observations with missing target variables imputed using a discrete uniform distribution
 ### Models:
 *Polynomial regression with hyperparameter tuning (degree)
 *LASSO regression with hyperparameter tuning (alpha)
