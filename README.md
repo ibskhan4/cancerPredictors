@@ -1,9 +1,9 @@
 # Predicting County-Level Cancer Incidence and Mortality Rate with Demographic Characteristics
 
 ## Contributors
+- Ibraheem Khan
 - Tucker Boynton
 - Chase Bookin
-- Ibraheem Khan
 
 ---
 
