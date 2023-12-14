@@ -1,38 +1,64 @@
 # Predicting County-Level Cancer Incidence and Mortality Rate with Demographic Characteristics
-## Project Overview:
 
-This project aims to predict county-level cancer incidence and mortality rates (per 100,000 people) using demographic characteristics. We explore the relationship between various factors like per-capita income, unemployment rate, education level, and minority share with cancer rates. We then compare the performance of several machine learning models, including polynomial regression, LASSO, decision trees, random forests, bagging, and gradient boosting, in predicting the target variables.
+## Contributors
+- Tucker Boynton
+- Chase Bookin
+- Ibraheem Khan
 
-## Data and Methodology:
+---
 
-### Data:
-* County-level cancer data from the Centers for Disease Control and Prevention (CDC)
-* Demographic summary statistics from the CDC
-* 54 observations dropped due to missing predictors
-* 70 observations with missing target variables imputed using a discrete uniform distribution
-### Models:
-*Polynomial regression with hyperparameter tuning (degree)
-*LASSO regression with hyperparameter tuning (alpha)
-*Decision trees with hyperparameter tuning (depth)
-*Random forests with hyperparameter tuning (depth, number of trees)
-*Bagging (bootstrap aggregation) using decision trees
-*Gradient boosting regression with hyperparameter tuning (learning rate)
-Results:
+### Overview
 
-Incidence:
-Bagging model with depth 9 and 8 bootstraps performs best (test MSE: 10270.583, R-squared: 0.434)
-Random forest with depth 9 performs second best
-Gradient boosting and polynomial regression follow
-Mortality:
-Random forest with depth 17 performs best (test MSE: 2942.509, R-squared: 0.374)
-Gradient boosting and bagging follow
-Polynomial regression and LASSO perform least well
-Key Takeaways:
+This project focuses on predicting cancer incidence and mortality rates at the county level using demographic indicators like per-capita income, unemployment rate, high-school dropout rate, disabled persons rate, minority share, poverty line percentage, and share of housing structures with at least 10 units. The study employs exploratory data analysis (EDA) to understand relationships between predictors and the target variables. Various machine learning models such as polynomial regression, LASSO regression, decision trees, random forests, bagging, and gradient boosting are utilized to predict rates and assess model performance.
 
-Ensemble methods like bagging and random forests outperformed single decision trees and other models for both incidence and mortality prediction.
-Demographic factors like per-capita income, unemployment rate, and education level play a role in cancer rates, though the relationships are complex.
-Future Work:
+### Data
 
-Explore additional features like geographic and environmental factors.
-Implement more advanced models like deep learning.
-Investigate the reasons behind the observed relationships between demographics and cancer rates.
+Data sources include county-level cancer data and demographic statistics obtained from the Centers for Disease Control and Prevention. Observations missing all predictors (54) are excluded from the analysis, while instances with missing target variable data (70) are imputed using a discrete uniform distribution from 1-15.
+
+### Model Overview
+
+#### Polynomial Linear Regression
+- Determines the best degree via cross-validation and assesses performance.
+
+#### LASSO
+- Implements regularization to improve model performance and selects alpha using cross-validation.
+
+#### Decision Trees, Random Forests, and Bagging
+- Identifies optimal tree depths and number of estimators through cross-validation.
+- Evaluates performance compared to individual decision trees.
+
+#### Gradient Boosting
+- Employs gradient boosting with optimized parameters.
+
+### Results Summary
+
+#### Incidence
+- Best-performing model: Bagging
+- R-squared (best model): 0.429
+
+#### Mortality
+- Best-performing model: Random Forest
+- R-squared (best model): 0.374
+
+### Results
+
+| Model | Test MSE | R-squared |
+|-------|----------|-----------|
+| **Incidence** | | |
+| Polynomial (degree 1) | 10,996.431 | 0.394 |
+| LASSO (alpha 0.1) | 11,264.117 | 0.379 |
+| Decision Tree (depth 3) | 12,240.119 | 0.325 |
+| Random Forest (depth 9) | 10,394.164 | 0.427 |
+| Bagging (depth 9) | 10,367.975 | 0.429 |
+| Boosting | 10,492.543 | 0.422 |
+| **Mortality** | | |
+| Polynomial (degree 1) | 3,087.628 | 0.343 |
+| LASSO (alpha 0.01) | 3,085.608 | 0.343 |
+| Decision Tree (depth 4) | 3,332.279 | 0.291 |
+| Random Forest (depth 17) | 2,942.509 | 0.374 |
+| Bagging (depth 17) | 3,038.686 | 0.353 |
+| Boosting | 2,968.460 | 0.368 |
+
+---
+
+Feel free to modify and expand upon this README to add details like installation instructions, usage guidance, or any additional insights from your project!
